@@ -48,6 +48,62 @@ const courses = [
         description: "Build dynamic websites with PHP and MySQL.",
         price: 89.99,
         image: "./images/image-9.png"
+    },
+    {
+        id: 8,
+        title: "Deep Web Monitoring",
+        description: "Learn to monitor and analyze activities on the deep web for security purposes.",
+        price: 159.99,
+        image: "./images/image-11.jpg"
+    },
+    {
+        id: 9,
+        title: "Dark Web Monitoring",
+        description: "Advanced techniques for monitoring dark web marketplaces and threats.",
+        price: 179.99,
+        image: "./images/image-7.png"
+    },
+    {
+        id: 10,
+        title: "Digital Forensics",
+        description: "Master digital evidence collection, analysis, and preservation techniques.",
+        price: 149.99,
+        image: "./images/image-5.jpg"
+    },
+    {
+        id: 11,
+        title: "Cyber Crime Investigation",
+        description: "Comprehensive course on investigating cyber crimes and building cases.",
+        price: 169.99,
+        image: "./images/image-6.png"
+    },
+    {
+        id: 12,
+        title: "Big Data in Cybersecurity",
+        description: "Use big data analytics to detect and prevent cyber threats.",
+        price: 189.99,
+        image: "./images/image-4.jpg"
+    },
+    {
+        id: 13,
+        title: "Advanced Ethical Hacking",
+        description: "Advanced penetration testing and ethical hacking methodologies.",
+        price: 199.99,
+        image: "./images/image-3.jpg"
+    },
+    {
+        id: 14,
+        title: "Network Security Fundamentals",
+        description: "Learn to secure networks against modern cyber threats.",
+        price: 139.99,
+        image: "./images/image-2.jpg"
+    },
+    {
+        id: 15,
+        title: "Incident Response and Management",
+        description: "Develop skills to respond effectively to cybersecurity incidents.",
+        price: 159.99,
+        image: "./images/image-1.jpg"
     }
 ];
 
