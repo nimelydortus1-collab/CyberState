@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberState - Online Course Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #007bff;
+            border-radius: 50%;
+            padding: 15px;
+        }
+        .accordion-button {
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #e7f3ff;
+            color: #007bff;
+            box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+        }
+        .accordion-button:hover {
+            background-color: #f8f9fa;
+        }
+        .accordion-body {
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .accordion-item {
+            border: none;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px !important;
+            overflow: hidden;
+        }
+        .accordion-item .accordion-button {
+            border-radius: 8px !important;
+        }
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+        .sponsor-item {
+            text-align: center;
+            padding: 20px;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+            opacity: 0.7;
+        }
+        .sponsor-item:hover {
+            transform: scale(1.1) translateY(-5px);
+            filter: grayscale(0%);
+            opacity: 1;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .sponsor-item img {
+            max-height: 80px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        .sponsor-item:hover img {
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CyberState</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="form.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Welcome to CyberState</h1>
+                    <p class="lead">Learn cutting-edge technology skills with our comprehensive online courses. From cybersecurity to programming, advance your career with expert-led training.</p>
+                    <a href="courses.html" class="btn btn-light btn-lg">Explore Courses</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="./images/image-6.png" alt="CyberState Learning" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">About CyberState</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./images/image-4.jpg" alt="About Us" class="img-fluid rounded mb-3">
+                </div>
+                <div class="col-md-6">
+                    <h3>Information Integrity is Our Priority</h3>
+                    <p>We provide high-quality, up-to-date courses taught by industry experts. Our commitment to excellence ensures you receive the best learning experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Students Say</h2>
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card text-center p-4 bg-white rounded shadow">
+                                    <div class="mb-3">
+                                        <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                    </div>
+                                    <p class="lead mb-4">"CyberState's cybersecurity courses completely transformed my career. The hands-on approach and expert instructors made complex topics accessible and practical."</p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="./images/image-1.jpg" alt="Sarah Johnson" class="rounded-circle me-3" width="60" height="60">
+                                        <div>
+                                            <h5 class="mb-0">Sarah Johnson</h5>
+                                            <small class="text-muted">Security Analyst</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card text-center p-4 bg-white rounded shadow">
+                                    <div class="mb-3">
+                                        <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                    </div>
+                                    <p class="lead mb-4">"The Python programming course was exceptional. I went from beginner to building real applications in just a few months. Highly recommended!"</p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="./images/image-2.jpg" alt="Michael Chen" class="rounded-circle me-3" width="60" height="60">
+                                        <div>
+                                            <h5 class="mb-0">Michael Chen</h5>
+                                            <small class="text-muted">Software Developer</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card text-center p-4 bg-white rounded shadow">
+                                    <div class="mb-3">
+                                        <i class="fas fa-quote-left fa-2x text-primary"></i>
+                                    </div>
+                                    <p class="lead mb-4">"CyberNet's ethical hacking course gave me the skills I needed to advance in my cybersecurity role. The practical labs were invaluable."</p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img src="./images/image-3.jpg" alt="Emily Rodriguez" class="rounded-circle me-3" width="60" height="60">
+                                        <div>
+                                            <h5 class="mb-0">Emily Rodriguez</h5>
+                                            <small class="text-muted">Cybersecurity Specialist</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fas fa-question-circle me-2"></i> What types of courses do you offer?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer comprehensive courses in cybersecurity, programming, networking, and emerging technologies. Our catalog includes Python, JavaScript, ethical hacking, digital forensics, and many more specialized topics.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-clock me-2"></i> How long do the courses take to complete?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Course duration varies by topic and depth. Most courses can be completed in 4-12 weeks with 5-10 hours of study per week. You can learn at your own pace with lifetime access to course materials.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="fas fa-certificate me-2"></i> Do you provide certificates upon completion?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! Upon successful completion of any course, you'll receive a professional certificate that you can add to your resume and LinkedIn profile. Certificates are issued digitally and can be downloaded immediately.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="fas fa-credit-card me-2"></i> What payment methods do you accept?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We accept all major credit cards, PayPal, and bank transfers. All payments are processed securely through our encrypted payment gateway. We also offer installment plans for select courses.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <i class="fas fa-users me-2"></i> Is there instructor support available?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! All our courses include access to instructor Q&A forums, live office hours, and direct messaging with course instructors. Our community forum also allows you to connect with fellow students.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <i class="fas fa-undo me-2"></i> What's your refund policy?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer a 30-day money-back guarantee on all courses. If you're not satisfied with your purchase, contact our support team within 30 days for a full refund, no questions asked.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Trusted By Industry Leaders</h2>
+            <div id="sponsorsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#sponsorsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#sponsorsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="sponsors-grid">
+                            <div class="sponsor-item">
+                                <img src="./images/messenger-1.png" alt="Sponsor 1" class="img-fluid">
+                            </div>
+                            <div class="sponsor-item">
+                                <img src="./images/twitter-1.png" alt="Sponsor 2" class="img-fluid">
+                            </div>
+                            <div class="sponsor-item">
+                                <img src="./images/facebook.jpg.JPG" alt="Sponsor 3" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="sponsors-grid">
+                            <div class="sponsor-item">
+                                <img src="./images/air-space.png" alt="Sponsor 4" class="img-fluid">
+                            </div>
+                            <div class="sponsor-item">
+                                <img src="./images/ibm-1.png" alt="Sponsor 5" class="img-fluid">
+                            </div>
+                            <div class="sponsor-item">
+                                <img src="./images/oracle-1.png" alt="Sponsor 6" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#sponsorsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#sponsorsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 CyberState. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
